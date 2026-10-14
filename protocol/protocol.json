@@ -1,0 +1,162 @@
+{
+  "purpose": "Illustrative model runs requested in Reviewer 2.2; not empirical validation, benchmarking, or prevalence estimation.",
+  "models": {
+    "openai": {
+      "label": "GPT-6.1 Sol",
+      "model_id": "gpt-6.1-sol"
+    },
+    "anthropic": {
+      "label": "Claude Sonnet 5.5",
+      "model_id": "claude-sonnet-5-5"
+    },
+    "google": {
+      "label": "Gemini 3.8 Flash",
+      "model_id": "gemini-3.8-flash"
+    }
+  },
+  "scenarios": [
+    {
+      "id": "S1_framing",
+      "paper_section": "6.1",
+      "title": "Hypercalcemia: one case, three formulations",
+      "conceptual_issue": "Formulation-induced salience: the vulnerability to which framing awareness is directed.",
+      "repetitions": 3,
+      "conditions": [
+        {
+          "id": "open",
+          "label": "Open differential",
+          "turns": [
+            "A 58-year-old woman presents with fatigue, a 6 kg weight loss over three months, and a serum calcium of 12.1 mg/dL. List the most likely diagnoses and the supporting evidence for each."
+          ]
+        },
+        {
+          "id": "malignancy",
+          "label": "Malignancy framing",
+          "turns": [
+            "A 58-year-old woman presents with fatigue, a 6 kg weight loss over three months, and a serum calcium of 12.1 mg/dL. Consider this as a possible presentation of malignancy and evaluate the evidence."
+          ]
+        },
+        {
+          "id": "parathyroid",
+          "label": "Hyperparathyroidism framing",
+          "turns": [
+            "A 58-year-old woman presents with fatigue, a 6 kg weight loss over three months, and a serum calcium of 12.1 mg/dL. Consider this as a possible presentation of primary hyperparathyroidism and evaluate the evidence."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S2_uncertainty",
+      "paper_section": "6.2",
+      "title": "Corticosteroids in community-acquired pneumonia",
+      "conceptual_issue": "Whether cautious-sounding prose preserves where uncertainty actually lies.",
+      "repetitions": 1,
+      "conditions": [
+        {
+          "id": "handout",
+          "label": "Teaching-handout synthesis",
+          "turns": [
+            "Summarize the current evidence on corticosteroid therapy for adults with community-acquired pneumonia, in one paragraph suitable for a clinical teaching handout."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S3_coherence",
+      "paper_section": "6.3",
+      "title": "Synthesis of six heterogeneous studies of Procedure K",
+      "conceptual_issue": "Whether narrative coherence preserves heterogeneity, scope and relative evidential weight.",
+      "repetitions": 1,
+      "conditions": [
+        {
+          "id": "synthesis",
+          "label": "Effectiveness synthesis",
+          "turns": [
+            "Below are the abstracts of six studies of Procedure K, a surgical treatment for chronic knee pain. In one paragraph, summarize what this evidence shows about whether Procedure K is effective.\n\n{{procedure_k_studies}}"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S4_provenance",
+      "paper_section": "6.4",
+      "title": "Steered versus neutral multi-turn synthesis of Procedure K",
+      "conceptual_issue": "Whether accumulated user steering changes the product while disappearing from its apparent provenance.",
+      "repetitions": 3,
+      "conditions": [
+        {
+          "id": "steered",
+          "label": "Steered sequence",
+          "turns": [
+            "Below are the abstracts of six studies of Procedure K, a surgical treatment for chronic knee pain. Summarize what this evidence shows about whether Procedure K is effective.\n\n{{procedure_k_studies}}",
+            "Focus on the strongest evidence that Procedure K is effective.",
+            "Now identify the weaknesses in the studies that found no benefit.",
+            "Rewrite the synthesis around the most methodologically robust findings, as a single paragraph for a review article."
+          ]
+        },
+        {
+          "id": "neutral",
+          "label": "Neutral sequence",
+          "turns": [
+            "Below are the abstracts of six studies of Procedure K, a surgical treatment for chronic knee pain. Summarize what this evidence shows about whether Procedure K is effective.\n\n{{procedure_k_studies}}",
+            "Describe the patient populations in these studies.",
+            "Now describe the comparators and outcomes used in these studies.",
+            "Rewrite the synthesis around the most methodologically robust findings, as a single paragraph for a review article."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S5_engineering",
+      "paper_section": "9",
+      "title": "Comparison of two constructed technical standards",
+      "conceptual_issue": "Whether synthesis collapses consequential scope and conformity differences between superficially similar standards.",
+      "repetitions": 1,
+      "conditions": [
+        {
+          "id": "compatibility",
+          "label": "Compatibility question",
+          "turns": [
+            "Below are excerpts from two technical standards for pressure-relief valves. A manufacturer's valve is certified to Standard A. In one paragraph, explain whether it also meets Standard B.\n\n{{standards}}"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S6_scicomm",
+      "paper_section": "9",
+      "title": "Lay summary of a conditional finding",
+      "conceptual_issue": "Whether compression for a general audience broadens a conditional finding beyond its warranted scope.",
+      "repetitions": 1,
+      "conditions": [
+        {
+          "id": "newsletter",
+          "label": "Newsletter summary",
+          "turns": [
+            "Write a summary of about 120 words of the following study for a general-audience health newsletter.\n\n{{scicomm_abstract}}"
+          ]
+        }
+      ]
+    }
+  ],
+  "generation_policy": {
+    "system_prompt": null,
+    "tools": null,
+    "retrieval": false,
+    "web_search": false,
+    "temperature": "provider default; not explicitly set",
+    "top_p": "provider default; not explicitly set",
+    "reasoning_or_thinking": "provider default",
+    "openai_max_output_tokens": 16384,
+    "anthropic_max_tokens": 8192,
+    "google_max_output_tokens": 8192,
+    "truncation_policy": "If any turn in a job is cut off for length, rerun the entire job once. Preserve both attempts. If the second attempt is also cut off, do not treat the job as complete."
+  },
+  "software_versions": {
+    "openai": "3.29.0",
+    "anthropic": "1.13.0",
+    "google-genai": "2.30.0",
+    "pandas": "3.0.6"
+  },
+  "saved_utc": "2026-10-13T09:12:36.410658+00:00"
+}

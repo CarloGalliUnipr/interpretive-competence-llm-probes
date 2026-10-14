@@ -1,0 +1,4 @@
+provider,model_label,model_requested,turn_1_response,turn_2_response,truncated,ok
+openai,GPT-6.1 Sol,gpt-6.1-sol,Got it—I’ll remember 7.,7,False,True
+anthropic,Claude Sonnet 5.5,claude-sonnet-5-5,"Got it, I'll remember the number 7. Keep in mind that my memory only lasts for this conversation, so I won't have it in a new chat. Within this one, just ask whenever you need it.",7,False,True
+google,Gemini 3.8 Flash,gemini-3.8-flash,"Got it, I'll remember the number 7. What's next?",7,False,True

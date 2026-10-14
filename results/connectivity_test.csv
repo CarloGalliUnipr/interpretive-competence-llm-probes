@@ -1,0 +1,4 @@
+provider,model_label,model_requested,model_returned,response,status_or_stop_reason,truncated,ok
+openai,GPT-6.1 Sol,gpt-6.1-sol,gpt-6.1-sol,OK,completed,False,True
+anthropic,Claude Sonnet 5.5,claude-sonnet-5-5,claude-sonnet-5-5,OK,end_turn,False,True
+google,Gemini 3.8 Flash,gemini-3.8-flash,gemini-3.8-flash,OK,FinishReason.STOP,False,True

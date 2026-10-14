@@ -1,0 +1,19 @@
+model_label,scenario_id,final_outputs
+Claude Sonnet 5.5,S1_framing,9
+Claude Sonnet 5.5,S2_uncertainty,1
+Claude Sonnet 5.5,S3_coherence,1
+Claude Sonnet 5.5,S4_provenance,6
+Claude Sonnet 5.5,S5_engineering,1
+Claude Sonnet 5.5,S6_scicomm,1
+GPT-6.1 Sol,S1_framing,9
+GPT-6.1 Sol,S2_uncertainty,1
+GPT-6.1 Sol,S3_coherence,1
+GPT-6.1 Sol,S4_provenance,6
+GPT-6.1 Sol,S5_engineering,1
+GPT-6.1 Sol,S6_scicomm,1
+Gemini 3.8 Flash,S1_framing,9
+Gemini 3.8 Flash,S2_uncertainty,1
+Gemini 3.8 Flash,S3_coherence,1
+Gemini 3.8 Flash,S4_provenance,6
+Gemini 3.8 Flash,S5_engineering,1
+Gemini 3.8 Flash,S6_scicomm,1
