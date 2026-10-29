@@ -1,0 +1,9 @@
+job_id,provider,model_label,scenario_id,condition_id,repetition,turn_index,timestamp_utc,error_type,error_code,error_status,quota_metric,output_generated
+google__S1_framing__malignancy__r2,google,Gemini 3.8 Flash,S1_framing,malignancy,2,1,2026-10-13T08:19:07.756740+00:00,ClientError,429,RESOURCE_EXHAUSTED,"generate_content_free_tier_requests (per day, per model)",no
+google__S1_framing__parathyroid__r2,google,Gemini 3.8 Flash,S1_framing,parathyroid,2,1,2026-10-13T08:19:42.178195+00:00,ClientError,429,RESOURCE_EXHAUSTED,"generate_content_free_tier_requests (per day, per model)",no
+google__S1_framing__open__r3,google,Gemini 3.8 Flash,S1_framing,open,3,1,2026-10-13T08:20:16.739865+00:00,ClientError,429,RESOURCE_EXHAUSTED,"generate_content_free_tier_requests (per day, per model)",no
+google__S1_framing__malignancy__r3,google,Gemini 3.8 Flash,S1_framing,malignancy,3,1,2026-10-13T08:20:51.928565+00:00,ClientError,429,RESOURCE_EXHAUSTED,"generate_content_free_tier_requests (per day, per model)",no
+google__S1_framing__parathyroid__r3,google,Gemini 3.8 Flash,S1_framing,parathyroid,3,1,2026-10-13T08:21:25.689966+00:00,ClientError,429,RESOURCE_EXHAUSTED,"generate_content_free_tier_requests (per day, per model)",no
+google__S2_uncertainty__handout__r1,google,Gemini 3.8 Flash,S2_uncertainty,handout,1,1,2026-10-13T08:21:59.534687+00:00,ClientError,429,RESOURCE_EXHAUSTED,"generate_content_free_tier_requests (per day, per model)",no
+google__S3_coherence__synthesis__r1,google,Gemini 3.8 Flash,S3_coherence,synthesis,1,1,2026-10-13T08:22:34.179823+00:00,ClientError,429,RESOURCE_EXHAUSTED,"generate_content_free_tier_requests (per day, per model)",no
+google__S4_provenance__steered__r1,google,Gemini 3.8 Flash,S4_provenance,steered,1,1,2026-10-13T08:23:08.434391+00:00,ClientError,429,RESOURCE_EXHAUSTED,"generate_content_free_tier_requests (per day, per model)",no

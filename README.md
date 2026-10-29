@@ -27,7 +27,9 @@ Model weights are proprietary and are **not** part of this repository. Exact API
 - S5 engineering standards: 3
 - S6 science communication: 3
 
-**Total: 57 final outputs and 111 official API turns.** The three repetitions in S1 and S4 are robustness checks, not a statistical sample.
+**Total: 57 final outputs and 111 completed official API turns.** The three repetitions in S1 and S4 are robustness checks, not a statistical sample.
+
+Eight Gemini 3.8 Flash jobs initially failed because the provider's daily request quota was exhausted; no output was returned, and the jobs were completed later the same morning. See `provenance/run_record.md` and `results/request_errors.csv`.
 
 ## Repository structure
 
@@ -50,10 +52,11 @@ results/
   S1_framing_comparison.csv
   S4_provenance_comparison.csv
   run_summary.csv
+  request_errors.csv            # the eight quota failures (no output returned)
   connectivity_test.csv
   multiturn_preflight.csv
 provenance/
-  pre_run_protocol_bundle.zip   # snapshot made before official calls
+  pre_run_protocol_bundle.zip   # protocol snapshot (rewritten on the 09:12 UTC restart; see run_record.md)
   run_record.md
 docs/
   framework_and_scenario_mapping.md
@@ -62,6 +65,7 @@ docs/
 scripts/
   official_run_code_export.py
   validate_outputs.py
+  table_A2_line_shares.py       # reproduces Table A2 of the paper
 ```
 
 ## Reproducing the run in Colab
@@ -87,6 +91,16 @@ python scripts/validate_outputs.py
 
 This checks that the package contains 57 final outputs, 111 official turns, the expected scenario counts, and no official length truncations.
 
+```bash
+python scripts/table_A2_line_shares.py
+```
+
+This reproduces Table A2 of the paper (S1 answer length and share of lines mentioning each diagnosis).
+
 ## Citation and license
 
-Please cite the associated paper when using this repository. Add the final bibliographic citation/DOI to this README once the paper is accepted or published. No software/data license has been imposed in this package; choose the license that matches the authors' and journal's intended reuse terms before making the repository public.
+If you use this material, please cite the associated paper:
+
+> Interpretive Competence as Epistemic Infrastructure in AI-Mediated Knowledge Production. *Knowledge* (MDPI), under review.
+
+The citation will be updated with the article DOI on publication. Licence: see `LICENSE`.
